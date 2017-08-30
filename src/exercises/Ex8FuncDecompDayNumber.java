@@ -45,22 +45,25 @@ public class Ex8FuncDecompDayNumber {
         }
 
         int[] monthssss = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        if (leapYear == true && month > 2){
-            monthssss[1] ++;
+        if (leapYear == true && month >= 2){
+            monthssss[1] += 1;
         }
-if (day > monthssss[month - 1]){
-    out.println("This month does not have that number of days!!!!!!!");
-}
-else
-{
-    for (int i = 0; i < (month - 1); i ++){
-        days += monthssss[i];
-    }
-    days+= day;
+        if (day > monthssss[month - 1]){
+            out.println("This month does not have that number of days!!!!!!!");
+        }
+        else if (month > 12){
+            out.println("there are only 12 months in a year!!!!!");
+        }
+        else
+        {
+            for (int i = 0; i < (month - 1); i ++){
+                days += monthssss[i];
+            }
+            days+= day;
 
 
-    out.println(days);
-}
+            out.println("day number of " + day + "/" + month + " 2017 is: " + days);
+        }
 
         // ---- Out ----
 
