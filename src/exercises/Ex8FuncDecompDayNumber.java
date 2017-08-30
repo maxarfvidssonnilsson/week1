@@ -27,6 +27,8 @@ public class Ex8FuncDecompDayNumber {
         //test();                // <--------- Uncomment to test only
 
         // -- In ----------------
+        boolean leapYear = false;
+        int days = 0;
         out.print("Input a year > ");
         int year = sc.nextInt();
         out.print("Input a month number > ");
@@ -35,7 +37,30 @@ public class Ex8FuncDecompDayNumber {
         int day = sc.nextInt();
 
         // --- Process ---------
+        if (year % 4 == 0) {
+            out.println("the year of " + year + " is a leap year.");
+            leapYear = true;
+        } else {
+            out.println("the year of " + year + " is not a leap year.");
+        }
 
+        int[] monthssss = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        if (leapYear == true && month > 2){
+            monthssss[1] ++;
+        }
+if (day > monthssss[month - 1]){
+    out.println("This month does not have that number of days!!!!!!!");
+}
+else
+{
+    for (int i = 0; i < (month - 1); i ++){
+        days += monthssss[i];
+    }
+    days+= day;
+
+
+    out.println(days);
+}
 
         // ---- Out ----
 
