@@ -17,7 +17,7 @@ public class Ex3SumAvg {
     public static void main(String[] args) {
         new Ex3SumAvg().program();
     }
-
+//testthisshitdog
     final Scanner sc = new Scanner(in);
 
     void program() {
